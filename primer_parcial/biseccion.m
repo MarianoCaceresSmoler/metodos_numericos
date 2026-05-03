@@ -4,7 +4,8 @@ function [p, iter] = biseccion(f, a, b, tol, max_iter)
         error('La función debe tener signos opuestos en los extremos a y b.');
     end
 
-    for iter = 1:max_iter
+    % MODIFICACIÓN: Empezamos a contar desde 0 para que coincida con x0, x1... xn
+    for iter = 0:max_iter
         p = (a + b) / 2; % Punto medio
 
         % Criterio de parada: si f(p) es casi 0 o el intervalo es muy chico

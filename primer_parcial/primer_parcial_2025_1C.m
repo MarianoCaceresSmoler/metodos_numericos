@@ -23,14 +23,14 @@ t = 4;
 v_objetivo = 5;
 
 % Función objetivo: f(c) = 0
-f = @(c) (g * m ./ c) .* (1 - exp(-(c ./ m) .* t)) - v_objetivo;
+f = @(c) ((g * m) / c) * (1 - exp(-(c * m* t))) - v_objetivo;
 
 a = 156;
 b = 157;
 
-% Forzamos la detención en la iteración 5 (m_4)
+% Forzamos la detención en la iteración 4 (m_4)
 tol = 0;
-max_iter = 5;
+max_iter = 4;
 
 [m4, iter_realizadas] = biseccion(f, a, b, tol, max_iter);
 res_final = m4;
